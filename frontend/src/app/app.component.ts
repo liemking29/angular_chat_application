@@ -25,9 +25,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   public userList = [
     {
       id: 1,
-      name: 'The Swag Coder',
-      phone: '9876598765',
-      image: 'assets/user/user-1.png',
+      name: 'Hoàng Liêm',
+      phone: '111111',
+      image: 'assets/user/male-user.png',
       roomId: {
         2: 'room-1',
         3: 'room-2',
@@ -36,9 +36,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
     {
       id: 2,
-      name: 'Wade Warren',
-      phone: '9876543210',
-      image: 'assets/user/user-2.png',
+      name: 'Hoàng Tuấn',
+      phone: '222222',
+      image: 'assets/user/male-user-2.png',
       roomId: {
         1: 'room-1',
         3: 'room-4',
@@ -47,9 +47,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
     {
       id: 3,
-      name: 'Albert Flores',
-      phone: '9988776655',
-      image: 'assets/user/user-3.png',
+      name: 'Ngọc Nữ',
+      phone: '333333',
+      image: 'assets/user/female-user.png',
       roomId: {
         1: 'room-2',
         2: 'room-4',
@@ -58,9 +58,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
     {
       id: 4,
-      name: 'Dianne Russell',
-      phone: '9876556789',
-      image: 'assets/user/user-4.png',
+      name: 'Ngọc Hoa',
+      phone: '444444',
+      image: 'assets/user/female-user-2.png',
       roomId: {
         1: 'room-3',
         2: 'room-5',
@@ -68,6 +68,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     }
   ];
+  title: any;
 
   constructor(
     private modalService: NgbModal,
@@ -100,7 +101,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   login(dismiss: any): void {
     this.currentUser = this.userList.find(user => user.phone === this.phone.toString());
-    this.userList = this.userList.filter((user) => user.name !== this.phone.toString());
+    this.userList = this.userList.filter((user) => user.phone !== this.phone.toString());
 
     if (this.currentUser) {
       this.showScreen = true;
